@@ -1,0 +1,43 @@
+{% extends "./root_template.html" %}
+
+{% block title %} 教师信息修改 {% endblock %}
+
+{% block url %}{% endblock %}
+
+{% block table %}
+    <form action="saveTeacherInfo" method="post">{% csrf_token %}
+        <tr><td>教师ID: {{ tid }}</td><td><input type="hidden" name="tid" value="{{ tid }}">禁止更改</td></tr>
+        <tr><td>教师姓名: {{ tname }}</td><td><input type="text" name="tname" placeholder="请输入用户名"></td></tr>
+        <tr><td>教师密码: {{ tpwd }}</td><td><input type="text" name="tpwd" placeholder="请输入新密码"></td></tr>
+
+        <tr>
+            <td>教师性别: {{ tsex }}</td>
+            <td>
+                <select name="tsex">
+                    <option value="True">男</option>
+                    <option value="False">女</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>教师职称: {{ tpost }}</td>
+            <td>
+                <select name="tpost">
+                    <option value="高级教师">高级教师</option>
+                    <option value="中级教师">中级教师</option>
+                    <option value="初级教师">初级教师</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr><td>教师电话: {{ tphone }}</td><td><input type="text" name="tphone" placeholder="请输入新手机号码"></td></tr>
+        <tr><td>教师密保问题: {{ tquestion }}</td><td><input type="text" name="tquestion" placeholder="请输入新的密保问题"></td></tr>
+        <tr><td>教师密保问题: {{ tanswer }}</td><td><input type="text" name="tanswer" placeholder="请输入新的密保答案"></td></tr>
+
+        <tr colspan="1">
+            <!--<td><button type="submit">保存</button></td>-->
+            <td><button type="submit">保存</button><button type="reset">重置</button></td>
+        </tr>
+    </form>
+{% endblock %}

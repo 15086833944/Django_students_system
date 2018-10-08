@@ -1,0 +1,24 @@
+{% extends "./root_template.html" %}
+
+{% block title %}学生信息修改{% endblock %}
+
+{% block table %}
+    <form action="#" method="post">{% csrf_token %}
+        <tr><td>学生ID: {{ sid }}</td><td><input type="hidden">禁止修改</td></tr>
+        <tr><td>学生姓名: {{ sname }}</td><td><input type="text" name="sname"></td></tr>
+        <tr><td>学生密码: {{ spwd }}</td><td><input type="text" name="spwd"></td></tr>
+        <tr><td>学生生日: {{ sbirth | date:"Y-m-j" }}</td><td><input type="text"></td></tr>
+
+        <tr><td>性别: {{ ssex }}</td><td>下拉列表</td></tr>
+
+        <tr><td>emial: {{ semail }}</td><td><input type="text" name="semail"></td></tr>
+        <tr><td>地址: {{ saddress }}</td><td><input type="text" name="saddress"></td></tr>
+        <tr><td>系: {{ sdepart }}</td><td><input type="text" name="sdepart"></td></tr>
+        <tr><td>班级: {{ sclass }}</td><td><input type="text" name="sclass"></td></tr>
+
+        <tr>
+            <td><button type="submit">登录</button></td>
+            <td><button type="reset">重置</button></td>
+        </tr>
+    </form>
+{% endblock %}

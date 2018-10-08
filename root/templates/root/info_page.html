@@ -1,0 +1,15 @@
+{% extends "./root_template.html" %}
+
+{% block title %}个人信息{% endblock %}
+
+{% block url %}{% endblock %}
+
+{% block info %}
+    <div align="center" class=".hidden-xs">
+        <sapn class="btn btn-default">用户ID {{ id }}</sapn>
+        <sapn class="btn btn-default">用户名 {{ username }}</sapn>
+        <a href="changePwd" class="btn btn-default">密码修改</a>
+        <span>{{ successful }}</span>
+        <span>{{ error }}</span>
+    </div>
+{% endblock %}

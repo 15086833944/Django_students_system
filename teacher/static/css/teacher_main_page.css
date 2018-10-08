@@ -1,0 +1,29 @@
+#main{
+    width: 1160px;
+	margin: 0 auto;
+}
+#left{
+    float: left;
+    width: 150px;
+    height: 600px;
+    background-color: #d6e9c6;
+    text-align: center;
+    /*position: relative;*/
+}
+#right{
+    float: left;
+    width: 1000px;
+    height: 600px;
+    background-image: url(../image/内容显示栏.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /*position: relative;*/
+}
+#wenben{
+    margin:80px 200px;
+    overflow: auto;
+    color: #a94442;
+}
+#title1 {
+    text-align: center;
+}

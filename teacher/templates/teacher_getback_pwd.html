@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>密码找回</title>
+    <style>
+        #main{
+        width: 700px;
+        height: 450px;
+            margin: 50px auto;
+        background-image: url(../static/image/密码找回背景.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        }
+        #table{
+            position: absolute;
+            margin-top: 150px;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form action="teacher_getback_pwd" method="post" id="table">{% csrf_token %}
+        <p>
+            请输入您的账号: <input type="text" style="width: 250px;height: 25px;" name="uname">
+        </p>
+        <p>
+            <button id="tijiao" type="submit">提交</button>
+            <a href="/teacher" style="text-decoration: none"><button type="button">点击返回登录页</button></a>
+        </p>
+        <p>
+            <span style="color: red" id="msg">{{error_msg}}</span>
+        </p>
+    </div>
+    </form>
+
+</body>
+</html>

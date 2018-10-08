@@ -1,0 +1,33 @@
+#main{
+    width: 1160px;
+	margin: 0 auto;
+}
+#left{
+    float: left;
+    width: 150px;
+    height: 600px;
+    background-color: #d6e9c6;
+    text-align: center;
+}
+#right{
+    float: left;
+    width:1000px;
+    height: 600px;
+    background-image: url(../image/内容显示栏.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /*position: absolute;*/
+}
+#wenben{
+    margin:80px 250px;
+    overflow: auto;
+}
+#title1{
+    text-align: center;
+}
+.zuo{
+    text-align: right;
+}
+.you{
+    text-align: left;
+}

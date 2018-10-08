@@ -1,0 +1,34 @@
+{% load static %}
+<!--模板页-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/change_pwd.css' %}">
+</head>
+<body>
+    <!--导航条-->
+    <div class="nav" id="nav-right">
+        <ul class="nav nav-tabs">
+            {% block url %}{% endblock %}
+            <li role="presentation"><a href="infoPage">个人信息</a></li>&nbsp;&nbsp;
+            <li role="presentation"><a href="teacherManage">教师管理</a></li>&nbsp;&nbsp;
+            <li role="presentation"><a href="studentManage">学生信息管理</a></li>&nbsp;&nbsp;
+            <li role="presentation"><a href="gradeManage">学生成绩管理</a></li>&nbsp;&nbsp;
+            <li role="presentation"><a href="logout">退出</a></li>&nbsp;&nbsp;
+        </ul>
+    </div>
+    <!--数据显示-->
+    <table class="table table-hover">
+        {% block table %}
+        {% endblock %}
+    </table>
+    <!--页面维护提示信息-->
+    {% block error %}{% endblock %}
+
+    <!--个人信息修改-->
+    {% block info %}{% endblock %}
+</body>
+</html>

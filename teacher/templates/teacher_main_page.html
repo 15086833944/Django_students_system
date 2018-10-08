@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师主页面</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_main_page.css' %}" type="text/css">
+</head>
+<body style="margin-top: 0px;">
+<div id="main">
+    <div style="height: 130px;">
+        <img src="{% static 'image/学校.png' %}" alt="">
+    </div>
+{#    <hr>#}
+    <div id="left">
+        <br><br>
+        <h2>功能模块</h2>
+        <p>
+            用户名： {{user_name}}
+        </p>
+        <p>
+            <a href="teacher_self_info">个人信息查看</a>
+        </p>
+        <p>
+            <a href="teacher_changepwd">密码修改</a>
+        </p>
+        <p>
+            <a href="teacher_setquestion">修改/设置密保</a>
+        </p>
+        <p>
+            <a href="teacher_chechinfo">查看学生信息</a>
+        </p>
+        <p>
+            <a href="teacher_login">点击退出账号</a>
+        </p>
+    </div>
+    <div id="right">
+        <div id="wenben">
+            <h3 id="title1">学校座右铭</h3><br>
+            <p>1、我们生活要有品味，不要无所谓；生活要讲究，不可将就；生活要浪漫，但不可散漫。</p>
+            <p>2、我们不是没有最好的机会，而是没有好的观念。</p>
+            <p>3、成功取决于90%的态度加10%的技能。</p>
+            <p>4、生命不在于活的长与短，而在于顿悟的早与晚，命运不是等待而是把握。</p>
+            <p>5、聪明的人看的懂，精明的人看的准，高明的人看的远，没有做不到，只有想不到。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

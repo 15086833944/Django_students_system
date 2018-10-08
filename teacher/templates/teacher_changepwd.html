@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师主页面</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_changepwd.css' %}" type="text/css">
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.3.js' %}"></script>
+</head>
+<body style="margin-top: 0px;">
+<div id="main">
+    <div style="height: 130px;">
+        <img src="{% static 'image/学校.png' %}" alt="">
+    </div>
+{#    <hr>#}
+    <div id="left">
+        <br><br>
+        <h2>功能模块</h2>
+        <p>
+            用户名： {{user_name}}
+        </p>
+        <p>
+            <a href="teacher_self_info">个人信息查看</a>
+        </p>
+        <p>
+            <a href="teacher_changepwd">密码修改</a>
+        </p>
+        <p>
+            <a href="teacher_setquestion">修改/设置密保</a>
+        </p>
+        <p>
+            <a href="teacher_chechinfo">查看学生信息</a>
+        </p>
+        <p>
+            <a href="teacher_login">点击退出账号</a>
+        </p>
+    </div>
+    <div id="right">
+        <div id="wenben">
+        <h3 id="title1" align="center">修改密码</h3><br>
+            <form action="teacher_changepwd" method="POST">{% csrf_token %}
+{#                <p>#}
+{#                    用户名称 <input type="text" name="" id="name"> <span id="uname">必须是6-18位</span>#}
+{#                </p>#}
+                <p>
+                    原始密码 <input type="text" name="opwd" id="pwd"> <span id="upwd" style="color: red">{{error_msg}}</span>
+                </p>
+                <p>
+                    输新密码 <input type="text" name="npwd1" id="pwd1"> <span id="upwd1">必须是6位以上</span>
+                </p>
+                <p>
+                    再输密码 <input type="text" name="npwd2" id="pwd2"> <span id="upwd2">必须与密码一致</span>
+                </p>
+                <p>
+                    <button id="tijiao" type="submit">提交</button>
+                </p>
+	        </form>
+            <script type="text/javascript" src="{% static 'js/teacher_changepwd.js' %}"></script>
+            <p>
+                <span style="color: red">{{change_info}}</span>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

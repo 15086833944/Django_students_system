@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>教师登录页面</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/teacher_login.css' %}" type="text/css">
+    <script src="{% static 'js/teacher_login.js' %}"></script>
+</head>
+<body>
+<div id="main">
+    <div>
+        教师登录
+    </div>
+    <hr>
+    <div id="left">
+		<div id="container">
+            <div id="list" style="left: -550px;">
+                <img src="{% static 'image/轮播图6.png' %}" alt="1" />
+                <img src="{% static 'image/轮播图6.png' %}" alt="1" />
+                <img src="{% static 'image/轮播图7.png' %}" alt="2" />
+                <img src="{% static 'image/轮播图8.png' %}" alt="3" />
+                <img src="{% static 'image/轮播图9.png' %}" alt="4" />
+                <img src="{% static 'image/轮播图10.png' %}" alt="5" />
+                <img src="{% static 'image/轮播图10.png' %}" alt="5" />
+            </div>
+            <div id="buttons">
+                <span index="1" class="on"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+                <span index="4"></span>
+                <span index="5"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        </div>
+    </div>
+
+		<div id="right" align="left">
+            <form action="teacher_login" method="post">{% csrf_token %}
+			<table cellpadding="15px" style="margin-top: 60px;margin-left:10px">
+				<tr>
+					<td align="right">用户名</td>
+					<td>
+						<input type="text" name="tname"  style="width: 250px;height: 25px;">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">密码</td>
+					<td>
+						<input type="password" name="tpwd" minlength="6" maxlength="20" placeholder="请输入6-20位号码字符" style="width: 250px;height: 25px;">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="teacher_getback_pwd">忘记密码?</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+                        <button class="p2" type="submit">登录</button>
+                        <a href="teacher_zhuce" style="text-decoration: none"><button class="p2" type="button">注册</button></a>
+					</td>
+				</tr>
+                <tr>
+					<td></td>
+					<td>
+                        <a href="/" style="text-decoration: none"><button class="p2" type="button">返回首页</button></a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<span style="color: red">{{error_msg}}</span>
+					</td>
+				</tr>
+			</table>
+            </form>
+		</div>
+</div>
+</body>
+</html>

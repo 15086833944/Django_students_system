@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师主页面</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_self_info.css' %}" type="text/css">
+</head>
+<body style="margin-top: 0px;">
+<div id="main">
+    <div style="height: 130px;">
+        <img src="{% static 'image/学校.png' %}" alt="">
+    </div>
+{#    <hr>#}
+    <div id="left">
+        <br><br>
+        <h2>功能模块</h2>
+        <p>
+            用户名： {{user_name}}
+        </p>
+        <p>
+            <a href="teacher_self_info">个人信息查看</a>
+        </p>
+        <p>
+            <a href="teacher_changepwd">密码修改</a>
+        </p>
+        <p>
+            <a href="teacher_setquestion">修改/设置密保</a>
+        </p>
+        <p>
+            <a href="teacher_chechinfo">查看学生信息</a>
+        </p>
+        <p>
+            <a href="teacher_login">点击退出账号</a>
+        </p>
+    </div>
+    <div id="right">
+        <div id="wenben">
+        <h3 id="title1">教师个人信息</h3>
+        <table id="table1" border="0px" cellspacing="0px" cellpadding="10px">
+            <tr>
+                <td class="zuo">教师id: </td>
+                <td class="you">{{tid}}</td>
+            </tr>
+            <tr>
+                <td class="zuo">姓名: </td>
+                <td class="you">{{tname}}</td>
+            </tr>
+            <tr>
+                <td class="zuo">性别: </td>
+                <td class="you">{{tsex}}</td>
+            </tr>
+            <tr>
+                <td class="zuo">职称: </td>
+                <td class="you">{{tpost}}</td>
+            </tr>
+            <tr>
+                <td class="zuo">联系方式: </td>
+                <td class="you">{{tphone}}</td>
+            </tr>
+            <tr>
+                <td class="zuo">密保问题: </td>
+                <td class="you">{{question}}</td>
+            </tr>
+
+        </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

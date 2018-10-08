@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师主页面</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_chechinfo.css' %}" type="text/css">
+</head>
+<body style="margin-top: 0px;">
+<div id="main">
+    <div style="height: 130px;">
+        <img src="{% static 'image/学校.png' %}" alt="">
+    </div>
+{#    <hr>#}
+    <div id="left">
+        <br><br>
+        <h2>功能模块</h2>
+        <p>
+            用户名： {{user_name}}
+        </p>
+        <p>
+            <a href="teacher_self_info">个人信息查看</a>
+        </p>
+        <p>
+            <a href="teacher_changepwd">密码修改</a>
+        </p>
+        <p>
+            <a href="teacher_setquestion">修改/设置密保</a>
+        </p>
+        <p>
+            <a href="teacher_chechinfo">查看学生信息</a>
+        </p>
+        <p>
+            <a href="teacher_login">点击退出账号</a>
+        </p>
+    </div>
+    <div id="right">
+        <div id="wenben">
+        <h3 id="title1">学生信息</h3>
+        <table id="table1" border="1px" cellspacing="0px">
+            <tr>
+                <td style="width: 60px">学号</td>
+                <td>姓名</td>
+                <td>生日</td>
+                <td style="width: 60px">性别</td>
+                <td>地址</td>
+                <td>电话</td>
+                <td>班别</td>
+            </tr>
+            {% for x in ulist %}
+                <tr>
+                    <td>{{x.sid}}</td>
+                    <td>{{x.sname}}</td>
+                    <td>{{x.sbirth | date:"Y-m-j"}}</td>
+                    <td>{{x.ssex}}</td>
+                    <td>{{x.saddress}}</td>
+                    <td>{{x.sdepart}}</td>
+                    <td>{{x.sclass}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

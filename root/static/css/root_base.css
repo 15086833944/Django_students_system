@@ -1,0 +1,14 @@
+body{
+    background-image: url("../image/root_back.jpg");
+}
+
+#root_login{
+    width: 320px;
+    position: relative;
+    top: 20px;
+    left: 720px;
+}
+
+#nav-right{
+    align:right;
+}

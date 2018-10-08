@@ -1,0 +1,13 @@
+body{
+}
+
+#root_change_pwd{
+    width: 320px;
+    position: relative;
+    top: 20px;
+    left: 720px;
+}
+
+#nav-right{
+    align:right;
+}

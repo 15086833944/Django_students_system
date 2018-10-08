@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>学生个人管理</title>
+	<style type="text/css">
+	body{margin: 0}
+		a{text-decoration: none}
+		#div1{height:50px;background-color: pink;line-height: 50px}
+		#div2{height:100px;background-color: ;line-height: 50px}
+		#div3{text-align:center;}
+		
+/*		table{margin: 0 500px}*/
+		#a1{float: right;}
+		
+		td{border:1px solid blue;margin: 0;width: 300px;float: left;height: 30px;margin: 0}
+        tr{margin:0}
+        table{margin: 0 auto}
+
+	</style>
+	<script src="{%static 'jquery-1.11.3.js' %}"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#span1').click(function(){
+				$('#div3').empty()
+				
+			
+				
+				
+				var table=$('<table></table>')
+				$('#div3').append(table);
+				var tr1=$('<tr></tr>');
+				var tr2=$('<tr></tr>');
+				var tr3=$('<tr></tr>');
+				var tr4=$('<tr></tr>');
+				var tr5=$('<tr></tr>');
+				var tr6=$('<tr></tr>');
+				var tr7=$('<tr></tr>');
+				table.append(tr1)
+				table.append(tr2)
+				table.append(tr3)
+				table.append(tr4)
+				table.append(tr5)
+				table.append(tr6)
+				table.append(tr7)
+				var td1=$('<td>姓名</td>');
+				var td2=$('<td>{{ uid.sname }}</td>');
+				var td3=$('<td>学号</td>');
+				var td4=$('<td>{{ uid.sid }}</td>');
+				var td5=$('<td>地址</td>');
+				var td6=$('<td>{{ uid.saddress }}</td>');
+				var td7=$('<td>生日</td>');
+				var td8=$('<td>{{ uid.sbirth }}</td>');
+				var td9=$('<td>性别</td>');
+				var td10=$('<td>{{ uid.ssex }}</td>');
+				var td11=$('<td>班级</td>');
+				var td12=$('<td>{{ uid.sclass }}</td>');
+				var td13=$('<td>email</td>');
+				var td14=$('<td>{{ uid.semail }}</td>');
+				tr1.append(td1);
+				tr1.append(td2);
+				tr2.append(td3);
+				tr2.append(td4);
+				tr3.append(td5);
+				tr3.append(td6);
+				tr4.append(td7);
+				tr4.append(td8);
+				tr5.append(td9);
+				tr5.append(td10);
+				tr6.append(td11);
+				tr6.append(td12);
+				tr7.append(td13);
+				tr7.append(td14);
+
+			})
+			$('#span2').click(function(){
+				$('#div3').empty()
+				var table=$('<table></table>')
+				$('#div3').append(table);
+				var tr1=$('<tr></tr>');
+				var tr2=$('<tr></tr>');
+				var tr3=$('<tr></tr>');
+				var tr4=$('<tr></tr>');
+				var tr5=$('<tr></tr>');
+				var tr6=$('<tr></tr>');
+				var tr7=$('<tr></tr>');
+				table.append(tr1)
+				table.append(tr2)
+				table.append(tr3)
+				table.append(tr4)
+				table.append(tr5)
+				table.append(tr6)
+				table.append(tr7)
+				var td1=$('<td>语文</td>');
+				var td2=$('<td>{{ gid.score }}</td>');
+				var td3=$('<td>数学</td>');
+				var td4=$('<td>{{ gid.score0 }}</td>');
+				var td5=$('<td>体育</td>');
+				var td6=$('<td>{{ gid.score1 }}</td>');
+				var td7=$('<td>美术</td>');
+				var td8=$('<td>{{ gid.score2 }}</td>');
+				var td9=$('<td>音乐</td>');
+				var td10=$('<td>{{ gid.score3 }}</td>');
+				var td11=$('<td>科学</td>');
+				var td12=$('<td>{{ gid.score4 }}</td>');
+				var td13=$('<td>生物</td>');
+				var td14=$('<td>{{ gid.score5 }}</td>');
+				tr1.append(td1);
+				tr1.append(td2);
+				tr2.append(td3);
+				tr2.append(td4);
+				tr3.append(td5);
+				tr3.append(td6);
+				tr4.append(td7);
+				tr4.append(td8);
+				tr5.append(td9);
+				tr5.append(td10);
+				tr6.append(td11);
+				tr6.append(td12);
+				tr7.append(td13);
+				tr7.append(td14);
+			});
+		});
+
+
+
+	</script>
+</head>
+<body>
+	<div id='div1'>
+		<span>{{ uid.sname }}同学</span>
+<a id="a1" href="login">注销&nbsp;&nbsp;&nbsp;</a>
+	</div>
+	<div id='div2'>
+	
+
+	</div>
+<span id='span1'>查看个人信息</span>
+<span id='span2'>查看个人成绩</span>
+<div id="div3"></div>
+
+</body>
+</html>

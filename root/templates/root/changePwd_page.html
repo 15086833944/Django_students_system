@@ -1,0 +1,25 @@
+{% extends "./root_template.html" %}
+
+{% block title %}修改密码{% endblock %}
+
+{% block info %}
+    <div id="root_change_pwd">
+        <div role="form">
+            <form action="changePwd" method="post">{% csrf_token %}
+                <div class="form-group">
+                    <label for="password1">原密码</label>
+                    <input type="password" name="oldPwd" id="password1" class="form-control" placeholder="请输入原密码">
+                </div>
+                <div class="form-group">
+                    <label for="password2">新密码</label>
+                    <input type="password" name="newPwd" id="password2" class="form-control" placeholder="请输入原密码">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">确认</button>
+                    <button type="reset" class="btn btn-default">重置</button>
+                    <a href="infoPage" class="btn  btn-default" role="button">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

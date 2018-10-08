@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>管理员登录</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/root_base.css' %}">
+</head>
+<body>
+    <div id="root_login">
+        <div role="form">
+            <form action="/root/mainPage" method="post">{% csrf_token %}
+                <div class="form-group">
+                    <label for="name">用户</label>
+                    <input type="text" name="username" class="form-control" id="name" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">登录</button>
+                    <button type="reset" class="btn btn-default">重置</button>
+                    <a class="btn btn-default" href="/" role="button">首页</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师主页面</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_setquestion.css' %}" type="text/css">
+</head>
+<body style="margin-top: 0px;">
+<div id="main">
+    <div style="height: 130px;">
+        <img src="{% static 'image/学校.png' %}" alt="">
+    </div>
+{#    <hr>#}
+    <div id="left">
+        <br><br>
+        <h2>功能模块</h2>
+        <p>
+            用户名： {{user_name}}
+        </p>
+        <p>
+            <a href="teacher_self_info">个人信息查看</a>
+        </p>
+        <p>
+            <a href="teacher_changepwd">密码修改</a>
+        </p>
+        <p>
+            <a href="teacher_setquestion">修改/设置密保</a>
+        </p>
+        <p>
+            <a href="teacher_chechinfo">查看学生信息</a>
+        </p>
+        <p>
+            <a href="teacher_login">点击退出账号</a>
+        </p>
+    </div>
+    <div id="right">
+        <div id="wenben">
+        <h3 id="title1" align="center">修改/设置密保</h3><br>
+            <form action="teacher_setquestion" method="POST">{% csrf_token %}
+                <p>
+                    请输入密保问题: <input type="text" style="width: 400px;" name="question">
+                </p>
+                <p>
+                    请输入密保答案: <input type="text" style="width: 400px;" name="answer">
+                </p>
+                <p>
+                    <button id="tijiao" type="submit">提交</button>
+                </p>
+	        </form>
+            <p>
+                <span style="color: red">{{change_info}}</span>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
