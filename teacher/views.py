@@ -26,6 +26,8 @@ def teacher_login(request):
     return render(request, 'teacher_login.html', {'error_msg': error_msg})
 
 
+
+
 # 教师查询个人信息
 def teacher_self_info(request):
     uid=request.COOKIES.get("tid")
@@ -57,6 +59,8 @@ def teacher_self_info(request):
     return render(request, 'teacher_self_info.html')
 
 
+
+
 # 教师修改个人密码
 def teacher_changepwd(request):
     error_msg=""
@@ -86,6 +90,7 @@ def teacher_changepwd(request):
         else:
             change_info = "两次密码不相同!"
     return render(request, 'teacher_changepwd.html',{"change_info":change_info,"error_msg":error_msg,"user_name":msg})
+
 
 
 # 教师查询学生信息
